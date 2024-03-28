@@ -1,0 +1,15 @@
+export const ImagesAssets = {
+  apple: require('../asset/Images/apple.png'),
+  fb: require('../asset/Images/fb.png'),
+  check: require('../asset/Images/check.png'),
+  Forgot: require('../asset/Images/Forgot.png'),
+  google: require('../asset/Images/google.png'),
+  firstSlid: require('../asset/Images/firstSlid.png'),
+  secondSlid: require('../asset/Images/secondSlid.png'),
+  thirdSlid: require('../asset/Images/thirdSlid.png'),
+  back: require('../asset/Images/back.png'),
+  cross: require('../asset/Images/cross.png'),
+  arrow: require('../asset/Images/arrow.png'),
+  camera: require('../asset/Images/camera.png'),
+  bussinessName: require('../asset/Images/bussinessName.png'),
+};
