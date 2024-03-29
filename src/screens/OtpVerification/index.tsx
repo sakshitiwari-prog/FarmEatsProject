@@ -76,7 +76,7 @@ const OtpVerificationScreen = () => {
             </Text>
             <TouchableOpacity
                 onPress={() => {
-                  navigation.replace(Constants.navigationScreens.SignUp);
+                  navigation.replace(Constants.navigationScreens.Login);
                 }}>
                 <Text style={styles.signUpNow}>
                   {Constants.LoginSingUpScreen.login}
@@ -100,11 +100,11 @@ const OtpVerificationScreen = () => {
                 </View>
                 <TouchableOpacity
                   onPress={() => {
-                    // handleSubmit();
-                    navigation.navigate(
-                      Constants.navigationScreens.PasswordReset,
-                      {data: '801801'},
-                    );
+                    handleSubmit();
+                    // navigation.navigate(
+                    //   Constants.navigationScreens.PasswordReset,
+                    //   {data: '801801'},
+                    // );
                   }}>
                   <Button
                     labelStyle={buttonStyle.label}

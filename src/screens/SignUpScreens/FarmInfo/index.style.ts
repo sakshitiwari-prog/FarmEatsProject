@@ -34,11 +34,12 @@ const styles = StyleSheet.create({
   },
   item: {
     borderBottomWidth: 1,
-    borderBottomColor: Colors.black,
+    borderBottomColor: Colors.inputFieldBg,
+    backgroundColor:Colors.white
   },
   itemText: {
     color: Colors.black,
-    fontSize: 16,
+    fontSize: 12,
   },
   dropdown: {
     // marginTop: responsiveHeightWrtScreen(1),

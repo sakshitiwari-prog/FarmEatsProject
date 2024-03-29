@@ -70,7 +70,7 @@ const PasswordResetScreen = () => {
             </Text>
             <TouchableOpacity
                 onPress={() => {
-                  navigation.replace(Constants.navigationScreens.SignUp);
+                  navigation.replace(Constants.navigationScreens.Login);
                 }}>
                 <Text style={styles.signUpNow}>
                   {Constants.LoginSingUpScreen.login}

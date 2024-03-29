@@ -63,7 +63,7 @@ const ForgotPasswordScreen = () => {
             </Text>
             <TouchableOpacity
                 onPress={() => {
-                  navigation.replace(Constants.navigationScreens.SignUp);
+                  navigation.replace(Constants.navigationScreens.Login);
                 }}>
                 <Text style={styles.signUpNow}>
                   {Constants.LoginSingUpScreen.login}
@@ -74,7 +74,7 @@ const ForgotPasswordScreen = () => {
         <View style={styles.middlePart}>
           <Formik
             validationSchema={FogotPassSchema}
-            initialValues={{phoneNo: '9311841370'}}
+            initialValues={{phoneNo: ''}}
             onSubmit={values => onSubmitBtnClickHandler(values)}>
             {({handleChange, handleSubmit, values, errors}) => (
               <View>
@@ -88,8 +88,8 @@ const ForgotPasswordScreen = () => {
                 />
                 <TouchableOpacity
                   onPress={() => {
-                    // handleSubmit();
-                    navigation.navigate(Constants.navigationScreens.OtpVerification);
+                    handleSubmit();
+                    // navigation.navigate(Constants.navigationScreens.OtpVerification);
                   }}>
                   <Button
                     labelStyle={buttonStyle.label}

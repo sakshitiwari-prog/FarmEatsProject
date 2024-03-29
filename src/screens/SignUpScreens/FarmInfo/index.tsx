@@ -29,7 +29,7 @@ const FarmInfoScreen = () => {
   const route = useRoute();
   const UserInfo = route.params?.data;
 
-  const [state, setState] = useState('UP');
+  const [state, setState] = useState('');
   const stateList = [
     {
       label: 'Alabama',
@@ -121,7 +121,7 @@ const FarmInfoScreen = () => {
                     leftIcon={'BussinessName'}
                   />
                   <InputField
-                    name={'email'}
+                    name={'informalName'}
                     label={Constants.UserInfoScreen.informalName}
                     value={formikProps.values.informalName}
                     handleChange={formikProps.handleChange}
@@ -199,9 +199,9 @@ const FarmInfoScreen = () => {
                         <Image
                           style={{
                             right: responsiveWidthWrtScreen(4),
-                            top: -responsiveHeightWrtScreen(3.3),
-                            width: 12,
-                            height: 12,
+                            top: -responsiveHeightWrtScreen(3.1),
+                            width: 10,
+                            height: 10,
                             position: 'absolute',
                             zIndex: 1,
 
@@ -218,7 +218,7 @@ const FarmInfoScreen = () => {
                     </View>
 
                     <InputField
-                      name={'password'}
+                      name={'zipcode'}
                       width={50}
                       label={Constants.UserInfoScreen.zipcode}
                       value={formikProps.values.zipcode}

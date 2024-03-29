@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   forgot: {
     color: Colors.primary,
-    fontSize: responsiveFontSize(14),
+    marginTop:8
   },
   inputField: {
     fontFamily: 'BeVietnamPro-Regular',
