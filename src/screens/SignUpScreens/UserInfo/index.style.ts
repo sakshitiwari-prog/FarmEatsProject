@@ -72,7 +72,7 @@ marginBottom:responsiveHeightWrtScreen(1)
   },
   mainContainer: {
     // width: responsiveWidthWrtScreen(94),
-    height: responsiveHeightWrtScreen(95),
+    height: responsiveHeightWrtScreen(92),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -96,9 +96,11 @@ marginBottom:responsiveHeightWrtScreen(1)
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    position:'relative',
     width: responsiveWidthWrtScreen(84),
     // fontWeight:'500',
   },
+  
   greetingsMsg: {
     fontSize: responsiveFontSize(32),
     // fontWeight: '400',

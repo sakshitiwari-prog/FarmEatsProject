@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     // width: responsiveWidthWrtScreen(94),
     // height: responsiveHeightWrtScreen(60),
     display: 'flex',
-    height: responsiveHeightWrtScreen(95),
+    height: responsiveHeightWrtScreen(92),
     flexDirection: 'column',
     justifyContent: 'space-between',
   },

@@ -24,13 +24,14 @@ const UserVerificationScreen = () => {
   const [error, setError] = useState({isError: false, msg: ''});
   const route = useRoute();
   const UserInfo = route.params?.data;
-  const [pickedFile, setPickedFile] = useState(null);
+  const [pickedFile, setPickedFile] = useState<any>(null);
 
   const pickDocument = async () => {
     if (!pickedFile) {
       try {
         const res = await DocumentPicker.pick({
-          type: [DocumentPicker.types.pdf],
+          type: [DocumentPicker.types.pdf, // APK MIME type
+        ],
         });
         setPickedFile(res);
       } catch (err) {
@@ -81,7 +82,7 @@ const UserVerificationScreen = () => {
                   city: '',
                   zipcode: '',
                 }}
-                onSubmit={values => onSubmitBtnClickHandler(values)}>
+                onSubmit={values => onSubmitBtnClickHandler()}>
                 {({handleChange, handleSubmit, values, errors}) => (
                   <View style={styles.contentContainer}>
                     <View>

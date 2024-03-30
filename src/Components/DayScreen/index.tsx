@@ -21,7 +21,6 @@ const DayScreen = () => {
         display: "flex",
         width: responsiveWidthWrtScreen(100),
         height: responsiveHeightWrtScreen(30),
-        backgroundColor: "yellow",
       }}
     >
       <Text>yh</Text>

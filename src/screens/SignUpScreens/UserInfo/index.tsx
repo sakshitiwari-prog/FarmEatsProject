@@ -27,7 +27,7 @@ const UserInfoScreen = () => {
       full_name: values.fullName,
       email: values.email,
       password: values.password,
-      phone: values.phoneNo.toString(),
+      phone: `+${values.phoneNo.toString()}`,
       role: 'farmer',
     };
     navigation.navigate(Constants.navigationScreens.FarmInfo, {data: sendData});
@@ -82,7 +82,7 @@ const UserInfoScreen = () => {
               }}
               onSubmit={values => onSubmitBtnClickHandler(values)}>
               {({handleChange, handleSubmit, values, errors}) => (
-                <View>
+                <View >
                   <InputField
                     name={'fullName'}
                     label={Constants.UserInfoScreen.fullName}

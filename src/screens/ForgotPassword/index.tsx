@@ -24,7 +24,7 @@ const ForgotPasswordScreen = () => {
     (values);
 
     const sendData = {
-      mobile: values.phoneNo,
+      mobile:`+${values.phoneNo}` ,
     };
 
     postRequest(urls.forgotPassword, sendData)

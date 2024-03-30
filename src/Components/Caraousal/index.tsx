@@ -62,7 +62,7 @@ const Slider = ({navigation}) => {
           height: 10,
           borderRadius: 5,
           marginHorizontal: -5,
-          backgroundColor: Colors.dotColor,
+          backgroundColor: Colors.black,
         }}
         inactiveDotOpacity={1}
         inactiveDotScale={0.7}
@@ -109,12 +109,12 @@ const Slider = ({navigation}) => {
               fontWeight: 'bold',
               marginBottom: responsiveHeightWrtScreen(3.5),
               fontFamily: 'BeVietnamPro-Bold',
-              color: Colors.dotColor,
+              color: Colors.black,
               fontSize: responsiveFontSize(18),
             }}>
             {currentSlideData.title}
           </Text>
-          <Text style={{textAlign: 'center', color: Colors.dotColor}}>
+          <Text style={{textAlign: 'center', color: Colors.black}}>
             {currentSlideData.description}
           </Text>
           <View style={{display: 'flex', alignItems: 'center'}}>
@@ -130,7 +130,7 @@ const Slider = ({navigation}) => {
               {Constants.others.actionSplashBtnText}
             </Button>
             <Button
-              textColor={Colors.dotColor}
+              textColor={Colors.black}
               onPress={() => {
                 navigation.navigate(Constants.navigationScreens.Login);
               }}
