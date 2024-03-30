@@ -70,7 +70,7 @@ const UserInfoScreen = () => {
               </Text>
             </View>
           </View>
-          <View style={styles.lowerPart}>
+          <View style={[styles.lowerPart,]}>
             <Formik
               validationSchema={SignUpUserInfoSchema}
               initialValues={{

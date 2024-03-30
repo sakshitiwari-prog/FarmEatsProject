@@ -1,59 +1,63 @@
-import React, {useEffect, useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {styles, buttonStyle} from './index.style';
+import React, { useEffect, useState } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { styles, buttonStyle } from "./index.style";
 
-import {useNavigation, useRoute} from '@react-navigation/native';
-import {Button} from 'react-native-paper';
-import {Formik, useFormik} from 'formik';
-import {postRequest} from '../../../utils/axios';
-import {urls} from '../../../utils/Helpers/urlHelper';
-import {saveDataToStorage} from '../../../utils/storage';
-import {Constants} from '../../../utils/constants';
-import {FarmInfoSchema, LoginSchema} from '../../../utils/Helpers/formikSchema';
-import ErrorModal from '../../../Components/errorModal';
-import {InputField} from '../../../Components/formComponents/InputField';
-import {ImagesAssets} from '../../../utils/imageAssets';
-import Colors from '../../../utils/colors';
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { Button } from "react-native-paper";
+import { Formik, useFormik } from "formik";
+import { postRequest } from "../../../utils/axios";
+import { urls } from "../../../utils/Helpers/urlHelper";
+import { saveDataToStorage } from "../../../utils/storage";
+import { Constants } from "../../../utils/constants";
+import {
+  FarmInfoSchema,
+  LoginSchema,
+} from "../../../utils/Helpers/formikSchema";
+import ErrorModal from "../../../Components/errorModal";
+import { InputField } from "../../../Components/formComponents/InputField";
+import { ImagesAssets } from "../../../utils/imageAssets";
+import Colors from "../../../utils/colors";
 
-import DropDown from 'react-native-paper-dropdown';
-import axios from 'axios';
+import DropDown from "react-native-paper-dropdown";
+import axios from "axios";
 import {
   responsiveFontSize,
   responsiveHeightWrtScreen,
   responsiveWidthWrtScreen,
-} from '../../../utils/responsiveHelper';
-import {SafeAreaView} from 'react-native-safe-area-context';
+} from "../../../utils/responsiveHelper";
+import { SafeAreaView } from "react-native-safe-area-context";
 const FarmInfoScreen = () => {
-  const [error, setError] = useState({isError: false, msg: ''});
+  const [error, setError] = useState({ isError: false, msg: "" });
   const [showDropDown, setShowDropDown] = useState(false);
   const route = useRoute();
   const UserInfo = route.params?.data;
 
-  const [state, setState] = useState('');
+  const [state, setState] = useState("");
   const stateList = [
     {
-      label: 'Alabama',
-      value: 'Alabama',
+      label: "Assam",
+      value: "Assam",
     },
     {
-      label: 'Alaska',
-      value: 'Alaska',
+      label: "Bihar",
+      value: "Bihar",
     },
     {
-      label: 'Arizona',
-      value: 'Arizona',
+      label: "Goa",
+      value: "Goa",
     },
     {
-      label: 'Arkansas',
-      value: 'Arkansas',
+      label: "UP",
+      value: "UP",
+    },
+
+    {
+      label: "Byram",
+      value: "Byram",
     },
     {
-      label: 'Byram',
-      value: 'Byram',
-    },
-    {
-      label: 'Wyoming',
-      value: 'Wyoming',
+      label: "Wyoming",
+      value: "Wyoming",
     },
   ];
 
@@ -73,12 +77,12 @@ const FarmInfoScreen = () => {
     });
   };
   let initialValue = {
-    BussinessName: '',
-    informalName: '',
-    streetAdd: '',
-    city: '',
-    state: '',
-    zipcode: '',
+    BussinessName: "",
+    informalName: "",
+    streetAdd: "",
+    city: "",
+    state: "",
+    zipcode: "",
   };
   const formikProps = useFormik({
     initialValues: initialValue,
@@ -86,13 +90,8 @@ const FarmInfoScreen = () => {
     validationSchema: FarmInfoSchema,
   });
   useEffect(() => {
-    formikProps.setFieldValue('state', state);
+    formikProps.setFieldValue("state", state);
   }, [state]);
-  useEffect(() => {
-    console.log('====================================');
-    console.log(formikProps.values.state);
-    console.log('=================do do===================');
-  }, [formikProps]);
 
   return (
     <SafeAreaView>
@@ -112,57 +111,58 @@ const FarmInfoScreen = () => {
               <View style={styles.contentContainer}>
                 <View>
                   <InputField
-                    name={'BussinessName'}
+                    name={"BussinessName"}
                     label={Constants.UserInfoScreen.bussinessName}
                     value={formikProps.values.BussinessName}
                     handleChange={formikProps.handleChange}
                     errors={formikProps.errors.BussinessName}
-                    customLeftIcon={true}
-                    leftIcon={'BussinessName'}
+                    // customLeftIcon={true}
+                    leftIcon={"label-outline"}
                   />
                   <InputField
-                    name={'informalName'}
+                    name={"informalName"}
                     label={Constants.UserInfoScreen.informalName}
                     value={formikProps.values.informalName}
                     handleChange={formikProps.handleChange}
                     errors={formikProps.errors.informalName}
-                    leftIcon={'emoticon-happy-outline'}
+                    leftIcon={"emoticon-happy-outline"}
                   />
                   <InputField
-                    name={'streetAdd'}
-                    customLeftIcon={true}
+                    name={"streetAdd"}
+                    // customLeftIcon={true}
                     label={Constants.UserInfoScreen.streetAdd}
                     value={formikProps.values.streetAdd}
                     handleChange={formikProps.handleChange}
                     errors={formikProps.errors.streetAdd}
-                    leftIcon={'home'}
+                    leftIcon={"home-outline"}
                   />
                   <InputField
-                    name={'city'}
+                    name={"city"}
                     label={Constants.UserInfoScreen.city}
                     value={formikProps.values.city}
                     handleChange={formikProps.handleChange}
                     errors={formikProps.errors.city}
-                    leftIcon={'lock-outline'}
+                    leftIcon={"map-marker-outline"}
                   />
                   <View style={styles.locationContainer}>
                     <View
                       style={{
-                        flexDirection: 'col',
+                        flexDirection: "col",
                         // alignItems: 'center',
-                        position: 'relative',
+                        position: "relative",
                         // backgroundColor:Colors.accent,
                         width: responsiveWidthWrtScreen(30),
                         height: responsiveHeightWrtScreen(6),
-                      }}>
+                      }}
+                    >
                       <DropDown
-                        mode={'outlined'}
+                        mode={"outlined"}
                         dropDownStyle={styles.dropdown}
                         activeColor={Colors.black}
                         inputProps={{
                           style: [
                             {
-                              fontFamily: 'BeVietnamPro-Regular',
+                              fontFamily: "BeVietnamPro-Regular",
                               fontSize: responsiveFontSize(14),
                               backgroundColor: Colors.inputFieldBg,
                               width: responsiveWidthWrtScreen(30),
@@ -174,7 +174,7 @@ const FarmInfoScreen = () => {
                         }}
                         theme={{
                           colors: {
-                            primary: 'red', // Change the label color
+                            primary: "red", // Change the label color
                             outline: Colors.white, // Change the border color
                             // You can customize more colors if needed
                           },
@@ -183,7 +183,7 @@ const FarmInfoScreen = () => {
                         dropDownItemStyle={styles.item}
                         dropDownItemTextStyle={styles.itemText}
                         label={
-                          <Text style={{color: Colors.backDropColor}}>
+                          <Text style={{ color: Colors.backDropColor }}>
                             {Constants.UserInfoScreen.state}
                           </Text>
                         }
@@ -195,22 +195,23 @@ const FarmInfoScreen = () => {
                         list={stateList}
                       />
                       <TouchableOpacity
-                        onPress={() => setShowDropDown(!showDropDown)}>
+                        onPress={() => setShowDropDown(!showDropDown)}
+                      >
                         <Image
                           style={{
                             right: responsiveWidthWrtScreen(4),
                             top: -responsiveHeightWrtScreen(3.1),
                             width: 10,
                             height: 10,
-                            position: 'absolute',
+                            position: "absolute",
                             zIndex: 1,
 
-                            objectFit: 'contain',
+                            objectFit: "contain",
                           }}
                           source={ImagesAssets.arrow} // Provide the path to your right icon
                         />
                       </TouchableOpacity>
-                      {formikProps.values.state === '' && (
+                      {formikProps.values.state === "" && (
                         <Text style={styles.error}>
                           {Constants.others.stateError}
                         </Text>
@@ -218,7 +219,7 @@ const FarmInfoScreen = () => {
                     </View>
 
                     <InputField
-                      name={'zipcode'}
+                      name={"zipcode"}
                       width={50}
                       label={Constants.UserInfoScreen.zipcode}
                       value={formikProps.values.zipcode}
@@ -231,19 +232,22 @@ const FarmInfoScreen = () => {
                   <TouchableOpacity
                     onPress={() => {
                       navigation.goBack();
-                    }}>
+                    }}
+                  >
                     <Image style={[styles.Icons]} source={ImagesAssets.back} />
                   </TouchableOpacity>
                   <TouchableOpacity
                     onPress={() => {
                       formikProps.handleSubmit();
-                    }}>
+                    }}
+                  >
                     <Button
                       labelStyle={buttonStyle.label}
-                      mode={'contained'}
+                      mode={"contained"}
                       textColor={Colors.black}
                       buttonColor={Colors.primary}
-                      style={[buttonStyle.button]}>
+                      style={[buttonStyle.button]}
+                    >
                       {Constants.others.continue}
                     </Button>
                   </TouchableOpacity>
@@ -256,7 +260,7 @@ const FarmInfoScreen = () => {
           <ErrorModal
             error={error.isError}
             msg={error.msg}
-            onCloseModel={() => setError({isError: false, msg: ''})}
+            onCloseModel={() => setError({ isError: false, msg: "" })}
           />
         )}
       </View>

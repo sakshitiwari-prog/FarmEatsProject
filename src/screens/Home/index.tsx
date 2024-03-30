@@ -58,7 +58,6 @@ const HomeScreen = ({navigation}: any) => {
         let parseData;
         if (data) {
           parseData = JSON.parse(data);
-          console.log(data, 'token', parseData);
           setToken(parseData);
         }
       })
@@ -78,7 +77,6 @@ const HomeScreen = ({navigation}: any) => {
     };
     quoteSearchRequest(urls.quoteGenerator, sendQuoteGeneratorData)
       .then(async (res: any) => {
-        console.log('res', res[0].quote);
         setQuoteInfo(prevInfo => ({...prevInfo, generatedQuote: res[0].quote}));
         if (res[0].quote) {
           try {
@@ -92,7 +90,6 @@ const HomeScreen = ({navigation}: any) => {
               .then(async (res: any) => {
                 if (res.success) {
                   try {
-                    console.log('saved successfully');
                   } catch (error) {
                     setError({isError: true, msg: Constants.others.wentWrong});
                   }

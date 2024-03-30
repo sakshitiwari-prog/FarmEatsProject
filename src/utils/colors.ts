@@ -2,7 +2,7 @@ const Colors = {
   primary: '#D5715B',
   secondary: '#2ecc71',
   ActiveBtn: '#4F17A6',
-  dotColor:'#261C12',
+  dotColor:'rgba(38, 28, 18, 0.3)',
   text: '#333',
   firstSlideBgColor:'#5EA25F',
   thirdSlideBgColor:'#F8C569',

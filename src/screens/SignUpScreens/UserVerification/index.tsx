@@ -43,24 +43,19 @@ const UserVerificationScreen = () => {
     }
   };
 
-  console.log('a====================================');
-  console.log(UserInfo);
-  console.log('====================jj================');
   const navigation = useNavigation<any>();
   const onSubmitBtnClickHandler = async () => {
-    // if(pickedFile){
+    if(pickedFile){
       const sendData = {
       ...UserInfo,
-      // registration_proof: pickedFile,
+      registration_proof: pickedFile,
     };
     navigation.navigate(Constants.navigationScreens.BussinessSchedule, {
       data: sendData,
     });
-  // }
+  }
   };
-  useEffect(() => {
-    console.log(pickedFile, 'pickedFile');
-  }, [pickedFile]);
+
 
   return (
     <SafeAreaView>

@@ -21,7 +21,7 @@ const ForgotPasswordScreen = () => {
 
   const navigation = useNavigation<any>();
   const onSubmitBtnClickHandler = async (values: any) => {
-    console.log(values);
+    (values);
 
     const sendData = {
       mobile: values.phoneNo,
@@ -29,7 +29,6 @@ const ForgotPasswordScreen = () => {
 
     postRequest(urls.forgotPassword, sendData)
       .then(async (res: any) => {
-        console.log(res, '------------------');
 
         if (res.success) {
           try {

@@ -18,9 +18,7 @@ const QuoteItem = ({quote}: any) => {
     quoteCategory: '',
     isExpanded: false,
   });
-  React.useEffect(() => {
-    console.log('quoteCategory', quote);
-  }, [quote]);
+ 
 
   const handlePress = (quoteTitle: string) => {
     setExpanded(prevExpanded => ({

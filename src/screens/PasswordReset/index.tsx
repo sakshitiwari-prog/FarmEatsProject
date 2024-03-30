@@ -24,7 +24,6 @@ const PasswordResetScreen = () => {
 
   const navigation = useNavigation<any>();
   const onSubmitBtnClickHandler = async (values: any) => {
-    console.log(values,UserInfo);
 
     const sendData = {
       token: UserInfo,
@@ -35,7 +34,6 @@ const PasswordResetScreen = () => {
 
     postRequest(urls.resetPass, sendData)
       .then(async (res: any) => {
-        console.log(res, '------------------');
 
         if (res.success) {
           try {
@@ -83,7 +81,6 @@ const PasswordResetScreen = () => {
             // validationSchema={pas}
             initialValues={{newPassword: '', password: ''}}
             onSubmit={values => { 
-              console.log(values);
               
               onSubmitBtnClickHandler(values)}}>
             {({handleChange, handleSubmit, values, errors}) => (

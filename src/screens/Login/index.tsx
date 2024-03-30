@@ -22,7 +22,6 @@ const LoginScreen = () => {
 
   const navigation = useNavigation<any>();
   const onSubmitBtnClickHandler = async (values: any) => {
-    console.log(values);
 
     const sendData = {
       email: values.email,
@@ -35,7 +34,6 @@ const LoginScreen = () => {
 
     postRequest(urls.login, sendData)
       .then(async (res: any) => {
-        console.log(res, '------------------');
 
         if (res.success) {
           try {

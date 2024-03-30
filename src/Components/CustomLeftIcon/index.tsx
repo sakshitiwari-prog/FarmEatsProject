@@ -17,13 +17,8 @@ type LeftIconType =
   | 'bussinessName';
 
 const CustomLeftIcon = (props: {leftIcon: LeftIconType}) => {
-  // Accessing image asset dynamically based on props.leftIcon
   const leftIconSource = ImagesAssets[props.leftIcon];
-  useEffect(() => {
-    console.log('====================================');
-    console.log(leftIconSource);
-    console.log('===================tr=================');
-  }, []);
+  
 
   return (
     <View style={styles.customIconContainer}>

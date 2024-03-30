@@ -36,7 +36,6 @@ const OtpVerificationScreen = () => {
       };
       postRequest(urls.otpVerify, sendData)
         .then(async (res: any) => {
-          console.log(res, '------------------');
 
           if (res.success) {
             try {
@@ -58,7 +57,6 @@ const OtpVerificationScreen = () => {
   };
   function otpSubmitFunc(otp) {
     setOTP(otp);
-    console.log('hy', otp);
   }
   return (
     <SafeAreaView>
