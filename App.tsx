@@ -10,7 +10,7 @@ import OtpVerificationScreen from './src/screens/OtpVerification';
 import ForgotPasswordScreen from './src/screens/ForgotPassword';
 import PasswordResetScreen from './src/screens/PasswordReset';
 const Stack = createNativeStackNavigator();
-
+ 
 function App() {
   return (
     <NavigationContainer >
